@@ -12,7 +12,7 @@ variables:
     PROJECT_NAME: "$CI_PROJECT_NAME-$CI_COMMIT_REF_NAME"
     BASE_URI: ${CX_BASE_URI}
     CX_TENANT: ${CX_TENANT}
-    CX_CLIENT_ID: ${ CX_CLIENT_ID }
+    CX_CLIENT_ID: ${CX_CLIENT_ID}
     CX_CLIENT_SECRET: ${CX_CLIENT_SECRET}
     ADDITIONAL_PARAMS: ""
     CHECKMARX_DOCKER_IMAGE: "ast-cli"
@@ -25,4 +25,5 @@ checkmarx-scan:
     name: checkmarx/${CHECKMARX_DOCKER_IMAGE}
     entrypoint: ['']
   script:
-    - /app/bin/cx scan create 
+    - env 
+    - /appp/bin/cx scan create 
