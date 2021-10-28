@@ -24,6 +24,6 @@ checkmarx-scan:
   stage: test
   image:
     name: checkmarx/${CHECKMARX_DOCKER_IMAGE}
-    entrypoint: ['/app/bin/cx']
+    entrypoint: ['/app/bin/cx scan create']
   script:
-    - 'scan' 'create' --project-name "${CI_PROJECT_NAME}" --file-source "${CI_REPOSITORY_URL}" "${ADDITIONAL_PARAMS}"
+    - --project-name "${CI_PROJECT_NAME}" --file-source "${CI_REPOSITORY_URL}" "${ADDITIONAL_PARAMS}"
