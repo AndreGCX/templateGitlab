@@ -18,7 +18,6 @@ variables:
     CHECKMARX_DOCKER_IMAGE: "ast-cli"
     CX_EXE: "cx.exe"
     GITLAB_BLOCK_MERGE: "false"
-    GITLAB_ERROR_MERGE: "false"
 
 checkmarx-scan:
   stage: test
@@ -26,4 +25,4 @@ checkmarx-scan:
     name: checkmarx/${CHECKMARX_DOCKER_IMAGE}
     entrypoint: ['']
   script:
-    - /app/bin/cx scan create --project-name "${CI_PROJECT_NAME}" --file-source "${CI_REPOSITORY_URL}" "${ADDITIONAL_PARAMS}"
+    - /app/bin/cx scan create 
