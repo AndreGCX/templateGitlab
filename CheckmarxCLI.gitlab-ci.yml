@@ -26,4 +26,4 @@ checkmarx-scan:
     entrypoint: ['']
   script:
     - env 
-    - /appp/bin/cx scan create 
+    - /app/bin/cx scan create --project-name "${CI_PROJECT_NAME}" --file-source "${CI_REPOSITORY_URL}" "${ADDITIONAL_PARAMS}"
