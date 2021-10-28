@@ -16,7 +16,7 @@ variables:
     CX_CLIENT_SECRET: ${ CX_CLIENT_SECRET }
     ADDITIONAL_PARAMS: ""
     CHECKMARX_DOCKER_IMAGE: "ast-cli"
-    CX_EXE: "./bin/cx.exe"
+    CX_EXE: "cx.exe"
     GITLAB_BLOCK_MERGE: "false"
     GITLAB_ERROR_MERGE: "false"
 
