@@ -25,7 +25,5 @@ checkmarx-scan:
   image:
     name: checkmarx/${CHECKMARX_DOCKER_IMAGE}
     entrypoint: ['']
-  variables:
-    CHECKMARX_INCREMENTAL: "false"
   script:
-    - ${CX_EXE} scan create --project-name "${CI_PROJECT_NAME}" --file-source "${CI_REPOSITORY_URL}" "${ADDITIONAL_PARAMS}"
+    - /app/bin/cx create --project-name "${CI_PROJECT_NAME}" --file-source "${CI_REPOSITORY_URL}" "${ADDITIONAL_PARAMS}"
