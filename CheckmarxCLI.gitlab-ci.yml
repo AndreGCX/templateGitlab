@@ -14,7 +14,7 @@ variables:
     CX_TENANT: ${CX_TENANT}
     CX_CLIENT_ID: ${CX_CLIENT_ID}
     CX_CLIENT_SECRET: ${CX_CLIENT_SECRET}
-    ADDITIONAL_PARAMS: "${ADDITIONAL_PARAMS}"
+    ADDITIONAL_PARAMS: ${ADDITIONAL_PARAMS}
     CHECKMARX_DOCKER_IMAGE: "ast-cli"
     CX_EXE: "cx.exe"
     GITLAB_BLOCK_MERGE: "false"
@@ -25,4 +25,4 @@ checkmarx-scan:
     name: checkmarx/${CHECKMARX_DOCKER_IMAGE}
     entrypoint: ['']
   script:
-    - /app/bin/cx scan create --project-name "${CI_PROJECT_NAME}" --file-source "${CI_REPOSITORY_URL}" "${ADDITIONAL_PARAMS}"
+    - /app/bin/cx scan create --project-name "${CI_PROJECT_NAME}" --file-source "${CI_REPOSITORY_URL}" ${ADDITIONAL_PARAMS}
