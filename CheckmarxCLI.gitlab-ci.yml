@@ -26,5 +26,5 @@ checkmarx-scan:
     entrypoint: ['']
   script:  
     - eval "arr=(${ADDITIONAL_PARAMS})"
-    - /app/bin/cx scan create --project-name "${CI_PROJECT_NAME}" --file-source "${CI_REPOSITORY_URL}" --format json --agent "Gitlab" "${arr[@]}"
+    - /app/bin/cx scan create "${arr[@]}" --project-name "${CI_PROJECT_NAME}" --file-source "${CI_REPOSITORY_URL}" --format json --agent "Gitlab"
 
