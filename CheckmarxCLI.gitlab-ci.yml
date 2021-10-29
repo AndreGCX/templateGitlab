@@ -25,15 +25,6 @@ checkmarx-scan:
     name: checkmarx/${CHECKMARX_DOCKER_IMAGE}
     entrypoint: ['']
   script:  
-    eval "arr=(${ADDITIONAL_PARAMS})"
-    /app/bin/cx scan create --project-name "${CI_PROJECT_NAME}" --file-source "${CI_REPOSITORY_URL}" --format json --agent "Gitlab" "${arr[@]}"
-    exitCode=$?
+    - eval "arr=(${ADDITIONAL_PARAMS})"
+    - /app/bin/cx scan create --project-name "${CI_PROJECT_NAME}" --file-source "${CI_REPOSITORY_URL}" --format json --agent "Gitlab" "${arr[@]}"
 
-    echo "Program exits with code: " $exitCode
-    if [ $exitCode -eq 0 ]
-    then
-      echo "Scan completed"
-    else
-      echo "Scan Failed"
-      exit $exitCode
-    fi
