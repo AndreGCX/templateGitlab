@@ -3,7 +3,7 @@
 #
 # These variables can be overridden in your .gitlab-ci.yml file or as envionrment variables.
 #
-#Find more documentation at: https://checkmarx.atlassian.net/wiki/spaces/AST/pages/6142034101/Gitlab+CI+CD
+# Find more documentation at: https://checkmarx.atlassian.net/wiki/spaces/AST/pages/6142034101/Gitlab+CI+CD
 #
 
 variables:
